@@ -10,13 +10,13 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottombar"
+        android:layout_above="@+id/rg"
         android:background="@android:color/darker_gray"
         ></FrameLayout>
     <RadioGroup
-        android:id="@+id/bottombar"
+        android:id="@+id/rg"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:clipChildren="false"
@@ -24,76 +24,41 @@
         >
         <RadioButton
             android:id="@+id/home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="主页"
-            android:button="@null"
             android:drawableTop="@drawable/selector_home"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:padding="2dp"
-            android:gravity="center"
-            android:textColor="@color/selector_textcolor"
-            android:textSize="12sp"
+            android:text="主页"
+            style="@style/RadioButton_style"
             />
+
         <RadioButton
             android:id="@+id/diary"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="日记"
-            android:button="@null"
             android:drawableTop="@drawable/selector_diary"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:padding="2dp"
-            android:gravity="center"
-            android:textColor="@color/selector_textcolor"
-            android:textSize="12sp"
+            android:text="日记"
+            style="@style/RadioButton_style"
             />
+
         <RadioButton
             android:id="@+id/add"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:drawableTop="@drawable/selector_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:translationY="-10sp"
-            android:button="@null"
             android:layout_weight="1"
-            android:background="@drawable/selector_add"
+            android:layout_gravity="center"
+            android:button="@null"
             />
- <!--       android:drawableTop="@drawable/selector_home"
- android:text="添加"
-        android:layout_weight="1"
-        android:layout_margin="2dp"
-        android:padding="2dp"
-        android:gravity="center"
-        android:textColor="@color/selector_textcolor"
-        android:textSize="12sp"-->
+
         <RadioButton
             android:id="@+id/meizi"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="妹子"
-            android:button="@null"
             android:drawableTop="@drawable/selector_meizi"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:padding="2dp"
-            android:gravity="center"
-            android:textColor="@color/selector_textcolor"
-            android:textSize="12sp"
+            android:text="妹子"
+            style="@style/RadioButton_style"
             />
+
         <RadioButton
             android:id="@+id/setting"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="设置"
-            android:button="@null"
             android:drawableTop="@drawable/selector_setting"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:padding="2dp"
-            android:gravity="center"
-            android:textColor="@color/selector_textcolor"
-            android:textSize="12sp"
+            android:text="设置"
+            style="@style/RadioButton_style"
             />
         </RadioGroup>
 </RelativeLayout>
