@@ -16,11 +16,12 @@
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:clipChildren="false"
         android:clipToPadding="false"
+        android:gravity="center_vertical"
         >
         <RadioButton
             android:id="@+id/home"
