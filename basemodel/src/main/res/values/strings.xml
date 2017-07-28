@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">BaseModel</string>
+    <string name="back">返回</string>
+    <string name="again">点击重试</string>
+    <string name="loading">请稍后...</string>
+
+
+    <!-- 时间格式 -->
+    <string name="time_current">刚刚</string>
+    <string name="time_before_days">%d天前</string>
+    <string name="time_before_hours">%d小时前</string>
+    <string name="time_before_minute">%d分钟前</string>
+    <string name="time_before_second">%d秒前</string>
+    <string name="time_yesterday">昨天%s</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string-array name="time_week_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wen</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
 </resources>

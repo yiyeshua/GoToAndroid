@@ -16,6 +16,7 @@ import com.pili.basemodel.dialog.DialogTools;
 import com.pili.basemodel.utils.ToastUtil;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -26,6 +27,7 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment {
     private boolean isViewPrepared; // 标识fragment视图已经初始化完毕
     private boolean hasFetchData; // 标识已经触发过懒加载数据
+    private Unbinder unbinder;
 
     @Override
     public void onAttach(Context context) {
@@ -96,6 +98,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        unbinder.unbind();
         hasFetchData = false;
         isViewPrepared = false;
         BaseApplication.getRefWatcher(getActivity()).watch(this);

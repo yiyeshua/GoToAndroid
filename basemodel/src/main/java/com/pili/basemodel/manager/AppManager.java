@@ -1,6 +1,12 @@
-package com.pili.basemodel.utils;
+package com.pili.basemodel.manager;
+
+/**
+ * Created by Administrator on 2017/7/27.
+ */
 
 import android.app.Activity;
+import android.content.Context;
+
 import java.util.Stack;
 
 /**
@@ -8,13 +14,14 @@ import java.util.Stack;
  * Activity管理栈
  */
 
-public class AppManager {
+public  class AppManager {
     private static Stack<Activity> activityStack;
     public volatile static AppManager instance = new AppManager();
 
     private AppManager() {
         activityStack = new Stack<>();
     }
+
 
     /**
      * 添加Activity到堆栈
@@ -119,5 +126,18 @@ public class AppManager {
             }
         }
         return false;
+    }
+    /**
+     * 退出应用程序
+     */
+    public void AppExit(Context context) {
+        try {
+            finishAllActivity();
+            android.app.ActivityManager activityMgr = (android.app.ActivityManager) context
+                    .getSystemService(Context.ACTIVITY_SERVICE);
+            activityMgr.killBackgroundProcesses(context.getPackageName());
+            System.exit(0);
+        } catch (Exception e) {
+        }
     }
 }
