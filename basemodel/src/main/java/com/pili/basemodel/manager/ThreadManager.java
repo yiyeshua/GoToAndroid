@@ -35,6 +35,7 @@ public class ThreadManager {
         return poolProxy;
     }
 
+    //线程池代理类  在构造方法中加载参数
     public static class ThreadPoolProxy {
 
         private ThreadPoolExecutor threadPoolExecutor;     // 线程池

@@ -1,7 +1,7 @@
 package com.pili.basemodel.http.callback.adapter;
 
 import com.google.gson.Gson;
-import com.yiyeshu.common.http.callback.HttpCallBack;
+import com.pili.basemodel.http.callback.HttpCallBack;
 
 import org.json.JSONException;
 import org.json.JSONObject;

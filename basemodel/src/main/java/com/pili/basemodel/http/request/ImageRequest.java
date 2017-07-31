@@ -2,7 +2,7 @@ package com.pili.basemodel.http.request;
 
 import android.widget.ImageView;
 
-import com.yiyeshu.xxyaya.R;
+import com.pili.basemodel.R;
 
 
 /**

@@ -1,21 +1,24 @@
 package com.pili.gotome;
 
-import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.pili.basemodel.base.BaseActivity;
+import com.pili.gotome.ui.diary.AddFragment;
+import com.pili.gotome.ui.diary.DiaryFragment;
+import com.pili.gotome.ui.home.HomeFragment;
+import com.pili.gotome.ui.meizi.MeiziFragment;
+import com.pili.gotome.ui.setting.SettingFragment;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
+public class Main2Activity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
     @BindView(R.id.content)
     FrameLayout content;
@@ -24,14 +27,16 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private Fragment mFragment;
     private ArrayList<Fragment> fragments;
     private int position;
-    private FragmentTransaction fragmentTransaction;
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
         fragments=new ArrayList<>();
         fragments.add(new HomeFragment());
         fragments.add(new DiaryFragment());
@@ -39,12 +44,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         fragments.add(new MeiziFragment());
         fragments.add(new SettingFragment());
 
-       // rg= (RadioGroup) findViewById(R.id.rg);
         rg.setOnCheckedChangeListener(this);
-       // rg.check(R.id.home);
         ((RadioButton) rg.findViewById(R.id.home)).setChecked(true);
-        Log.e("TAG", "aaaaaaaaaaaaaa");
-
     }
 
     @Override
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         switch (checkedId) {
             case R.id.home :
                 position=0;
-                Log.e("TAG", "000000000000000000000");
                 break;
             case R.id.diary :
                 position=1;
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 position=4;
                 break;
         }
-        Log.e("TAG", "111111111111111111111111111");
        switchFragment(mFragment,fragments.get(position));
     }
 
@@ -79,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void switchFragment(Fragment fromFragment, Fragment toFragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if(mFragment!=null){
-            Log.e("TAG", "3333333333333333333333");
             mFragment=toFragment;
             if(!toFragment.isAdded()){
                 ft.hide(fromFragment).add(R.id.content,toFragment).commit();
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             }
 
         }else{
-            Log.e("TAG", "222222222222222222222222222222");
             mFragment=toFragment;
             ft.add(R.id.content,mFragment).commit();
         }

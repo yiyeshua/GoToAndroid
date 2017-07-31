@@ -30,7 +30,9 @@
         android:supportsRtl="true"
         >
         <activity android:name=".commonactivity.WebViewActivity"/>
+
     </application>
+
 
 
 </manifest>

@@ -1,6 +1,7 @@
-package com.pili.gotome;
+package com.pili.gotome.ui.setting;
 
 import com.pili.basemodel.base.BaseFragment;
+import com.pili.gotome.R;
 
 /**
  * Created by lhw on 2017/7/25.

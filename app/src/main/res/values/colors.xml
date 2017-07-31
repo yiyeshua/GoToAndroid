@@ -7,4 +7,6 @@
 
     <color name="bottom_color_check">#d81e06</color>
     <color name="bottom_color_normal">#8a8a8a</color>
+
+    <color name="color_all">#2d335f</color>
 </resources>

@@ -5,8 +5,10 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.pili.basemodel.base.BaseApplication;
+import com.pili.basemodel.cache.ACache;
 import com.pili.basemodel.manager.AppCrashHandler;
 import com.pili.basemodel.utils.AppUtils;
+import com.pili.basemodel.utils.SPUtils;
 
 /**
  * Created by Administrator on 2017/7/26.
@@ -16,6 +18,8 @@ public class App extends BaseApplication {
     @Override
     public void onCreate() {
         AppUtils.init(this);
+        ACache.get(this);
+        SPUtils.setApplication(this);
         //初始化异常处理机制，收集错误日志并保存在sd卡的crashLog目录下
         initCrashHandler(this);
         super.onCreate();
